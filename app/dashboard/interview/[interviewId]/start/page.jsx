@@ -53,7 +53,7 @@ const StartInterview = ({ params }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 my-10 gap-2">
         {/* Questin Section */}
         <QuestionSection
           mockInterviewQuestion={mockInterviewQuestion}
@@ -68,17 +68,18 @@ const StartInterview = ({ params }) => {
         />
       </div>
       <div className="flex gap-3 my-5 md:my-0 md:justify-end md:gap-6">
-        {activeQuestionIndex > 0 && (
+        {/* {activeQuestionIndex > 0 && (
           <Button
             onClick={() => setActiveQuestionIndex(activeQuestionIndex - 1)}
           >
             Previous Question
           </Button>
-        )}
+        )} */}
         {activeQuestionIndex != mockInterviewQuestion?.length - 1 && (
           <Button
             onClick={() => setActiveQuestionIndex(activeQuestionIndex + 1)}
-            disabled={!handleTimeUp}
+            className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg"
+            // disabled={!handleTimeUp}
           >
             Next Question
           </Button>

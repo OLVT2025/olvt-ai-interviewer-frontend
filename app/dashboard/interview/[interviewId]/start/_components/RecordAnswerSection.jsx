@@ -205,7 +205,7 @@ const RecordAnswerSection = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center overflow-hidden">
+    <div className="flex flex-col w-full items-center justify-center overflow-hidden">
       <div className="mb-4">
         <Timer key={activeQuestionIndex} duration={10} onTimeUp={handleTimeUp} />
       </div>
@@ -219,9 +219,9 @@ const RecordAnswerSection = ({
           <Image src={"/camera.jpg"} width={200} height={200} alt="Camera placeholder" />
         )}
       </div>
-      <div className="md:flex mt-4 md:mt-8 md:gap-5">
+      <div className="md:flex mt-4 md:mt-8 md:gap-2">
         <div className="my-4 md:my-0">
-          <Button onClick={() => setWebCamEnabled((prev) => !prev)}>
+          <Button onClick={() => setWebCamEnabled((prev) => !prev)} className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg">
             {webCamEnabled ? "Close WebCam" : "Enable WebCam"}
           </Button>
         </div>
@@ -229,6 +229,7 @@ const RecordAnswerSection = ({
           variant="outline"
           onClick={isRecording ? stopRecording : startRecording}
           disabled={loading || timerExpired}
+          className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg"
         >
           {isRecording ? (
             <h2 className="text-red-400 flex gap-2 ">
@@ -238,12 +239,13 @@ const RecordAnswerSection = ({
             " Record Answer"
           )}
         </Button>
-        {timerExpired && (
+
+      </div>
+      {timerExpired && (
         <div className="mt-4 text-red-500">
           Time's up! Your answer has been recorded.
         </div>
       )}
-      </div>
       {/* Check transcription code */}
       {/* {userAnswer && (
         <div className="mt-4 p-4 bg-gray-100 rounded-lg">

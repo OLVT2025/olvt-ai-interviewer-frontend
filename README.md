@@ -1,7 +1,7 @@
 # AI-Powered Mock Interview Platform
 
 ## Description
-This is an advanced and interactive AI-powered mock interview platform designed to help job seekers practice and improve their interview skills. Built with Next.js, Tailwind CSS, and Gemini Api,PostgreSQL, Drizzle ORM, it provides users with a good interview experience to enhance their chances of landing their dream job.
+This is an advanced and interactive AI-powered interview platform designed to help job seekers practice and improve their interview skills. Built with Next.js, Tailwind CSS, and Gemini Api,PostgreSQL, Drizzle ORM, it provides users with a good interview experience to enhance their chances of landing their dream job.
 
 ## Features
 - AI-driven Interview: interview questions and feedback powered by AI.
@@ -46,7 +46,7 @@ To use the AI-Powered Mock Interview Platform, follow these guidelines:
 
 ## Feedback
 
-If you have any feedback, please reach me at [mohamedamaan319@gmail.com](mailto:mohamedamaan319@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/mohamedamaan319/).
+If you have any feedback, please reach me at [muditmg.official@gmail.com](mailto:muditmg.official@gmail.com) or
 
 
 ## Contributing

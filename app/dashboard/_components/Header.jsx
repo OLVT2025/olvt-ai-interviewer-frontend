@@ -32,11 +32,11 @@ const Header = ({ logo }) => {
   }, []);
   return (
     <div className=" shadow-sm ">
-      <div className="w-[80%] m-auto flex gap-4 items-center justify-between">
+      <div className="w-[80%] m-auto flex gap-4 items-center justify-between p-2">
         <Link className="hidden md:block"  href="/dashboard">
           <div className="flex flex-row">
             <Image src={logo} width={80} height={80} alt="logo" />
-            <div className="items-center pl-4 pt-4 font-bold text-4xl bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 text-transparent bg-clip-text">OLVT AI Interviewer</div>
+            <div className="items-center pl-4 pt-4 font-bold text-4xl bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 text-transparent bg-clip-text pt-2">OLVT AI Interviewer</div>
           </div>
           
         </Link>

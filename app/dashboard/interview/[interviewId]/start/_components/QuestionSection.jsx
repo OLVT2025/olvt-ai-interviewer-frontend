@@ -12,18 +12,18 @@ const QuestionSection = ({ mockInterviewQuestion, activeQuestionIndex }) => {
   };
   return (
     mockInterviewQuestion && (
-      <div className=" flex flex-col justify-between p-5 border rounded-lg my-1 bg-secondary">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
+      <div className=" flex flex-col justify-between p-5 border rounded-lg my-1 shadow-md">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-2">
           {mockInterviewQuestion &&
             mockInterviewQuestion.map((question, index) => (
               <h2
                 className={`p-2  rounded-full text-center text-xs md:text-sm cursor-pointer md:block hidden ${
                   activeQuestionIndex == index
-                    ? "bg-black text-white"
+                    ? "bg-orange-500 text-white"
                     : "bg-secondary"
                 }`}
               >
-                Question #{index + 1}
+                Question {index + 1}
               </h2>
             ))}
         </div>
