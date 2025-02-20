@@ -27,8 +27,8 @@ const page = () => {
             <nav className="flex flex-col sm:flex-row flex-wrap items-center justify-between mt-4 md:mt-0 space-y-4 sm:space-y-0 sm:space-x-4">
               <div>
                 <iframe
-                  src="https://github.com/sponsors/modamaan/button"
-                  title="Sponsor modamaan on GitHub"
+                  src="https://github.com/sponsors/mudit404"
+                  title="Sponsor mudit404 on GitHub"
                   height="32"
                   width="114"
                   className="border-0 rounded-lg">
@@ -39,7 +39,7 @@ const page = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/modamaan/Ai-mock-Interview">
+                  href="https://github.com/mudit404">
                   <FaGithub className="w-10 h-8" />
                 </a>
               </div>
@@ -135,7 +135,7 @@ const page = () => {
       </main>
 
       <footer className="py-8 bg-black text-white text-center">
-        <p>© 2025 AI Mock Interview. All rights reserved.</p>
+        <p>© 2025 OLVT AI Interviewer. All rights reserved.</p>
       </footer>
     </div>
   )

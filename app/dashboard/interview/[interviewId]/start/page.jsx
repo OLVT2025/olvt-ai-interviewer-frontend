@@ -8,11 +8,13 @@ import QuestionSection from "./_components/QuestionSection";
 import RecordAnswerSection from "./_components/RecordAnswerSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { set } from "react-hook-form";
 
 const StartInterview = ({ params }) => {
   const [interviewData, setInterviewData] = useState();
   const [mockInterviewQuestion, setMockInterviewQuestion] = useState();
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+  const [candidateDetails, setCandidateDetails]= useState();
   useEffect(() => {
     requestFullscreen();
     GetInterviewDetails();
@@ -46,6 +48,7 @@ const StartInterview = ({ params }) => {
       .where(eq(MockInterview.mockId, params.interviewId));
 
     const jsonMockResp = JSON.parse(result[0].jsonMockResp);
+    setCandidateDetails("Job Description: ",result[0].jobDesc, "years of experience: ", result[0].jobExperience);
     console.log(jsonMockResp);
     setMockInterviewQuestion(jsonMockResp);
     setInterviewData(result[0]);
@@ -65,6 +68,7 @@ const StartInterview = ({ params }) => {
           mockInterviewQuestion={mockInterviewQuestion}
           activeQuestionIndex={activeQuestionIndex}
           interviewData={interviewData}
+          candidateDetails= {candidateDetails}
         />
       </div>
       <div className="flex gap-3 my-5 md:my-0 md:justify-end md:gap-6">

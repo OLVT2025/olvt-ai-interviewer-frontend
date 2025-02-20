@@ -42,7 +42,7 @@ const AddNewInterview = () => {
   Job Positions: ${jobPosition}, 
   Job Description: ${jobDesc}, 
   Years of Experience: ${jobExperience}. 
-  Based on this information, please provide 5 interview questions with answers in JSON format, ensuring "Question" and "Answer" are fields in the JSON.
+  Based on this information, please provide 5 interview questions with answers. Question should be of varying difficulty starting with easy to difficult According to the year of experience. Each question will be answered in 2 min by the interviewee.  Provide in JSON format, ensuring "Question" and "Answer" are fields in the JSON.
 `;
 
     const result = await chatSession.sendMessage(InputPrompt);
@@ -145,84 +145,6 @@ const AddNewInterview = () => {
       </div>
       </form>
     </div>
-    // <div>
-    //   <div
-    //     className="p-10 rounded-lg border bg-secondary hover:scale-105 hover:shadow-sm transition-all cursor-pointer"
-    //     onClick={() => setOpenDialog(true)}
-    //   >
-    //     <h2 className=" text-lg text-center">+ Add New</h2>
-    //   </div>
-    //   <Dialog open={openDailog}>
-    //     <DialogContent className="max-w-2xl">
-    //       <DialogHeader>
-    //         <DialogTitle className="text-2xl">
-    //           Tell us more about your job interviwing
-    //         </DialogTitle>
-    //         <DialogDescription>
-    //           <form onSubmit={onSubmit}>
-    //             <div className="my-3">
-    //               <h2>
-    //                 Add Details about your job position, job descritpion and
-    //                 years of experience
-    //               </h2>
-
-    //               <div className="mt-7 my-3">
-    //                 <label className="text-black">Job Role/job Position</label>
-    //                 <Input
-    //                   className="mt-1"
-    //                   placeholder="Ex. Full stack Developer"
-    //                   required
-    //                   onChange={(e) => setJobPosition(e.target.value)}
-    //                 />
-    //               </div>
-    //               <div className="my-5">
-    //                 <label className="text-black">
-    //                   Job Description/ Tech stack (In Short)
-    //                 </label>
-    //                 <Textarea
-    //                   className="placeholder-opacity-50"
-    //                   placeholder="Ex. React, Angular, Nodejs, Mysql, Nosql, Python"
-    //                   required
-    //                   onChange={(e) => setJobDesc(e.target.value)}
-    //                 />
-    //               </div>
-    //               <div className="my-5">
-    //                 <label className="text-black">Years of Experience</label>
-    //                 <Input
-    //                   className="mt-1"
-    //                   placeholder="Ex. 5"
-    //                   max="50"
-    //                   type="number"
-    //                   required
-    //                   onChange={(e) => setJobExperience(e.target.value)}
-    //                 />
-    //               </div>
-    //             </div>
-    //             <div className="flex gap-5 justify-end">
-    //               <Button
-    //                 type="button"
-    //                 variant="goast"
-    //                 onClick={() => setOpenDialog(false)}
-    //               >
-    //                 Cancel
-    //               </Button>
-    //               <Button type="submit" disabled={loading}>
-    //                 {loading ? (
-    //                   <>
-    //                     <LoaderCircle className="animate-spin" />
-    //                     Generating From AI
-    //                   </>
-    //                 ) : (
-    //                   "Start Interview"
-    //                 )}
-    //               </Button>
-    //             </div>
-    //           </form>
-    //         </DialogDescription>
-    //       </DialogHeader>
-    //     </DialogContent>
-    //   </Dialog>
-    // </div>
   );
 };
 
