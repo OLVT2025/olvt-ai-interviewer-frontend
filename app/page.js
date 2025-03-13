@@ -23,7 +23,7 @@ const page = () => {
         {/* Header Section */}
         <header className="w-full py-8 bg-gray-100 shadow-md">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-            <h1 className="text-3xl font-bold text-primary">AI Mock Interview</h1>
+            <h1 className="text-3xl font-bold text-primary">AI Interviewer</h1>
             <nav className="flex flex-col sm:flex-row flex-wrap items-center justify-between mt-4 md:mt-0 space-y-4 sm:space-y-0 sm:space-x-4">
               <div>
                 <iframe
@@ -55,8 +55,8 @@ const page = () => {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center text-center py-20 bg-gradient-to-r from-gray-900 to-gray-400  px-6 md:px-0">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Ace Your Next Interview</h2>
-          <p className="mt-4 text-lg md:text-xl text-white ">Practice with AI-powered mock interviews and get personalized feedback</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">Create Your Next Screening Interview</h2>
+          <p className="mt-4 text-lg md:text-xl text-white ">Take AI-powered interviews and get personalized feedback</p>
           <div className="mt-6 flex flex-col md:flex-row">
             <a
               href="/dashboard"
@@ -78,23 +78,29 @@ const page = () => {
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-800">Features</h2>
             <p className="mt-4 text-lg text-gray-800">
-              Our AI Mock Interview platform offers a range of powerful features:
+              Our AI Interview platform offers a range of powerful features:
             </p>
             <div className="flex flex-wrap justify-center mt-8">
-              <div className="w-full md:w-1/3 px-4 py-8">
-                <div className="bg-blue-100 rounded-lg p-6 shadow-md">
-                  <h3 className="text-2xl font-semibold text-black-600">AI Mock Interviews</h3>
+              <div className="w-full md:w-1/3 lg:w-1/4 px-4 py-8">
+                <div className="bg-blue-100 rounded-lg p-6 shadow-md h-full flex flex-col justify-between">
+                  <h3 className="text-2xl font-semibold text-black-600">AI Interviews</h3>
                   <p className="mt-2 text-gray-600">Experience realistic interview scenarios with our advanced AI.</p>
                 </div>
               </div>
-              <div className="w-full md:w-1/3 px-4 py-8">
-                <div className="bg-blue-100 rounded-lg p-6 shadow-md">
+              <div className="w-full md:w-1/3 lg:w-1/4 px-4 py-8">
+                <div className="bg-blue-100 rounded-lg p-6 shadow-md h-full flex flex-col justify-between">
+                  <h3 className="text-2xl font-semibold text-black-600">Personalized Interview Videos</h3>
+                  <p className="mt-2 text-gray-600">Experience realistic interview scenarios with our advanced AI.</p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 lg:w-1/4 px-4 py-8">
+                <div className="bg-blue-100 rounded-lg p-6 shadow-md h-full flex flex-col justify-between">
                   <h3 className="text-2xl font-semibold text-black-600">Instant Feedback</h3>
                   <p className="mt-2 text-gray-600">Get instant, personalized feedback to improve your performance.</p>
                 </div>
               </div>
-              <div className="w-full md:w-1/3 px-4 py-8">
-                <div className="bg-blue-100 rounded-lg p-6 shadow-md">
+              <div className="w-full md:w-1/3 lg:w-1/4 px-4 py-8">
+                <div className="bg-blue-100 rounded-lg p-6 shadow-md h-full flex flex-col justify-between">
                   <h3 className="text-2xl font-semibold text-black-600">Comprehensive Reports</h3>
                   <p className="mt-2 text-gray-600">Receive detailed reports highlighting your strengths and weaknesses.</p>
                 </div>
@@ -111,17 +117,17 @@ const page = () => {
               <div className="w-full md:w-1/2 px-4 py-8">
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <p className="text-gray-600">
-                    "The AI mock interviews were incredibly helpful. I felt much more confident going into my real interview."
+                    "The AI screening interviews allowed us to evaluate candidates efficiently and consistently. The in-depth analysis of each candidate's responses saved us valuable time in the hiring process."
                   </p>
-                  <h4 className="mt-4 text-lg font-semibold text-blue-600">- Alex Johnson</h4>
+                  <h4 className="mt-4 text-lg font-semibold text-blue-600">- Alex Johnson, HR Manager</h4>
                 </div>
               </div>
               <div className="w-full md:w-1/2 px-4 py-8">
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <p className="text-gray-600">
-                    "The feedback was spot on and helped me improve my answers. Highly recommend this service!"
+                    "With the personalized feedback from AI interviews, we were able to identify key strengths and areas of improvement in candidates, making our hiring decisions more informed and effective."
                   </p>
-                  <h4 className="mt-4 text-lg font-semibold text-blue-600">- Sarah Williams</h4>
+                  <h4 className="mt-4 text-lg font-semibold text-blue-600">- Sarah Williams, Talent Acquisition Lead</h4>
                 </div>
               </div>
             </div>

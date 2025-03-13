@@ -42,8 +42,7 @@ const QuestionSection = ({ mockInterviewQuestion, activeQuestionIndex }) => {
             <strong>Note:</strong>
           </h2>
           <h2 className="text-sm text-blue-600 my-2">
-            {/* {process.env.NEXT_PUBLIC_QUESTION_NOTE} */}
-            some information
+            {process.env.NEXT_PUBLIC_QUESTION_NOTE}
           </h2>
         </div>
       </div>

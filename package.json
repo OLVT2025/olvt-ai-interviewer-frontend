@@ -27,6 +27,8 @@
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.31.2",
     "framer-motion": "^11.2.12",
+    "google-auth-library": "^9.15.1",
+    "googleapis": "^146.0.0",
     "lucide-react": "^0.395.0",
     "mini-svg-data-uri": "^1.4.4",
     "moment": "^2.30.1",

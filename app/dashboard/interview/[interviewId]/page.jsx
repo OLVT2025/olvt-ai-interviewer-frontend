@@ -3,26 +3,29 @@ import { db } from "@/utils/db";
 import { MockInterview } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import { Lightbulb, TriangleAlert, UserCheck, WebcamIcon } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Webcam from "react-webcam";
 import Link from "next/link";
 import { useContext } from 'react';
 import { WebCamContext } from "../../layout";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import recordingService from "@/utils/recordingService";
 
 const Interview = ({ params }) => {
   const { webCamEnabled, setWebCamEnabled } = useContext(WebCamContext);
   const [interviewData, setInterviewData] = useState();
-  // const [webCamEnabled, setWebCamEnebled] = useState(false);
   const [permissionsGranted, setPermissionsGranted] = useState(false);
-
+  const [isInitialized, setIsInitialized] = useState(false);
+  const router = useRouter();
+  
   useEffect(() => {
     console.log(params.interviewId);
     GetInterviewDetails();
     checkPermissions();
   }, []);
-  
+
   const GetInterviewDetails = async () => {
     const result = await db
       .select()
@@ -38,9 +41,26 @@ const Interview = ({ params }) => {
       const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
       setPermissionsGranted(true);
       stream.getTracks().forEach(track => track.stop()); // Stop the stream after checking
+      
+      // Initialize recording service but don't start recording yet
+      const initialized = await recordingService.initialize(params.interviewId);
+      setIsInitialized(initialized);
     } catch (error) {
+      console.error("Permission error:", error);
       setPermissionsGranted(false);
+      setIsInitialized(false);
     }
+  };
+
+  const handleStartInterview = () => {
+    if (!permissionsGranted) {
+      toast.error("Please enable camera and microphone permissions");
+      checkPermissions(); // Try to request permissions again
+      return;
+    }
+    
+    // Navigate to interview start page
+    router.push(`/dashboard/interview/${params.interviewId}/start`);
   };
 
   return (
@@ -66,9 +86,6 @@ const Interview = ({ params }) => {
               {interviewData?.jobExperience}
             </h2>
           </div>
-          {/* <div className="p-5 border rounded-lg border-yellow-300 bg-yellow-100">
-            <div dangerouslySetInnerHTML={{ __html: process.env.NEXT_PUBLIC_INFORMATION }} />
-          </div> */}
         </div>
         <div>
           {permissionsGranted ? (
@@ -99,17 +116,19 @@ const Interview = ({ params }) => {
       </div>
       <div className="flex justify-center my-4 md:my-0 md:justify-end md:items-end">
         {permissionsGranted ? (
-          <Link href={"/dashboard/interview/" + params.interviewId + "/start"}>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg"  >Start Interview</Button>
-          </Link>
-        ): (
+          <Button 
+            onClick={() => handleStartInterview()}
+            className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg"
+          >
+            Start Interview
+          </Button>
+        ) : (
           <Button
             onClick={() => {
-              toast("Enable Microphone and Camera");
-              setPermissionsGranted(false); // Force re-render for debugging
+              toast.error("Enable Microphone and Camera");
+              checkPermissions(); // Try to request permissions again
             }}
-            className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg"  
-            
+            className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg"
           >
             Start Interview
           </Button>

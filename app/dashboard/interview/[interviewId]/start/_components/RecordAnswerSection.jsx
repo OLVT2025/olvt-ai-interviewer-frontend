@@ -48,13 +48,13 @@ const RecordAnswerSection = ({
 
   const handleTimeUp = async () => {
     console.log("handleTimeUp triggered:");
+    stopRecording();
     if (userAnswer.length > 10 && !updateCalledRef.current) {
       await updateUserAnswer();
       updateCalledRef.current = true;
       console.log("User answer saved:", userAnswer);
     }
   
-
   };
   
   

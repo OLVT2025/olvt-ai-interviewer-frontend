@@ -1,4 +1,4 @@
-import { serial, text, varchar } from "drizzle-orm/pg-core";
+import { serial, text, varchar, integer } from "drizzle-orm/pg-core";
 import { pgTable } from "drizzle-orm/pg-core";
 
 export const MockInterview = pgTable('mockInterview', {
@@ -10,7 +10,9 @@ export const MockInterview = pgTable('mockInterview', {
     jobExperience: varchar('jobExperience').notNull(),
     createdBy: varchar('createdBy').notNull(),
     createdAt: varchar('createdAt'),
-    mockId: varchar('mockId').notNull()
+    mockId: varchar('mockId').notNull(),
+    tabSwitchCount: integer('tabSwitchCount').default(0),
+    viewLink: text('viewLink'),
 });
 
 export const Question = pgTable('question', {
@@ -40,10 +42,10 @@ export const UserAnswer = pgTable('userAnswer',{
     createdAt: varchar('createdAt')
 })
 
-export const Newsletter = pgTable('newsletter',{
-    id: serial('id').primaryKey(),
-    newName: varchar('newName'),
-    newEmail: varchar('newEmail'),
-    newMessage: text('newMessage'),
-    createdAt: varchar('createdAt')
-})
+// export const Newsletter = pgTable('newsletter',{
+//     id: serial('id').primaryKey(),
+//     newName: varchar('newName'),
+//     newEmail: varchar('newEmail'),
+//     newMessage: text('newMessage'),
+//     createdAt: varchar('createdAt')
+// })
