@@ -112,7 +112,51 @@ const Interview = ({ params }) => {
         </div>
       </div>
       <div className="p-5 mb-4 border rounded-lg border-[#f3d268] bg-[#fffef1]">
-        <div dangerouslySetInnerHTML={{ __html: process.env.NEXT_PUBLIC_INFORMATION }} />
+        {/* <div dangerouslySetInnerHTML={{ __html: process.env.NEXT_PUBLIC_INFORMATION }} />
+         */}
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-yellow-800">
+              <span class="font-bold text-lg">⚠️ Important Guidelines</span>
+          </div>
+
+          <div class="space-y-3">
+              <div class="flex items-start gap-2">
+                  <span class="text-yellow-700">🎥</span>
+                  <div>
+                      <p class="font-semibold">Camera & Microphone</p>
+                      <p>Keep your camera and microphone ON throughout the interview. Turning off either will result in immediate disqualification.</p>
+                  </div>
+              </div>
+
+              <div class="flex items-start gap-2">
+                  <span class="text-yellow-700">⏱️</span>
+                  <div>
+                      <p class="font-semibold">Time Management</p>
+                      <p>• 5 questions in total</p>
+                      <p>• 2 minutes per question</p>
+                      <p>• Each question can be answered only once</p>
+                  </div>
+              </div>
+
+              <div class="flex items-start gap-2">
+                  <span class="text-yellow-700">🎯</span>
+                  <div>
+                      <p class="font-semibold">Recording Process</p>
+                      <p>• Click 'Record' button to start your answer</p>
+                      <p>• Recording automatically stops after 2 minutes</p>
+                      <p>• Navigate to the next question</p>
+                  </div>
+              </div>
+
+              <div class="flex items-start gap-2">
+                  <span class="text-yellow-700">⛔</span>
+                  <div>
+                      <p class="font-semibold">Strict Proctoring</p>
+                      <p>This interview is strictly proctored. Any unfair means detected will lead to immediate disqualification.</p>
+                  </div>
+              </div>
+        </div>
+      </div>
       </div>
       <div className="flex justify-center my-4 md:my-0 md:justify-end md:items-end">
         {permissionsGranted ? (

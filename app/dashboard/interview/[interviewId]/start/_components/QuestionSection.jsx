@@ -42,7 +42,9 @@ const QuestionSection = ({ mockInterviewQuestion, activeQuestionIndex }) => {
             <strong>Note:</strong>
           </h2>
           <h2 className="text-sm text-blue-600 my-2">
-            {process.env.NEXT_PUBLIC_QUESTION_NOTE}
+            {/* {process.env.NEXT_PUBLIC_QUESTION_NOTE} */}
+            You will be asked 5 questions. Each question will have 2 minutes for you to answer. You can only answer each question once. Once you have answered a question, you cannot go back to it. You must move on to the next question after answering the current one. The interview cannot be paused once started, and skipping a question is not allowed.
+            <br/>Additionally, you must record your answer for each question. If no answer is recorded, it will be treated as an empty response.
           </h2>
         </div>
       </div>
