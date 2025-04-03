@@ -42,7 +42,7 @@ const AddNewInterview = () => {
   Job Positions: ${jobPosition}, 
   Job Description: ${jobDesc}, 
   Years of Experience: ${jobExperience}. 
-  Based on this information, please provide 5 interview questions with answers. Question should be of varying difficulty starting with easy to difficult According to the year of experience. Each question will be answered in 2 min by the interviewee.  Provide in JSON format, ensuring "Question" and "Answer" are fields in the JSON.
+  Based on this information, please provide 10 interview questions with answers. Question should be of varying difficulty starting with easy to difficult According to the year of experience. Each question will be answered in 2 min by the interviewee.  Provide in JSON format, ensuring "Question" and "Answer" are fields in the JSON.
 `;
 
     const result = await chatSession.sendMessage(InputPrompt);
