@@ -132,7 +132,7 @@ const Interview = ({ params }) => {
                   <span class="text-yellow-700">⏱️</span>
                   <div>
                       <p class="font-semibold">Time Management</p>
-                      <p>• 5 questions in total</p>
+                      <p>• 10 questions in total</p>
                       <p>• 2 minutes per question</p>
                       <p>• Each question can be answered only once</p>
                   </div>

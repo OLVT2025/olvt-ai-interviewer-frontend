@@ -54,7 +54,7 @@ const AddQuestions = () => {
     Years of Experience: ${jobExperience},
     Which type of question: ${typeQuestion},
     This company previous question: ${company},
-    Based on this information, please provide 5 interview questions with answers in JSON format.
+    Based on this information, please provide 10 interview questions with answers in JSON format.
     Each question and answer should be fields in the JSON. Ensure "Question" and "Answer" are fields.
 }  
   `;

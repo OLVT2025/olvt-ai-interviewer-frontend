@@ -183,7 +183,7 @@ const RecordAnswerSection = ({
   return (
     <div className="flex flex-col w-full items-center justify-center overflow-hidden">
       <div className="mb-4">
-        <Timer key={activeQuestionIndex} duration={20} onTimeUp={handleTimeUp} stopManual={stopManual}/>
+        <Timer key={activeQuestionIndex} duration={120} onTimeUp={handleTimeUp} stopManual={stopManual}/>
       </div>
       <div className="flex flex-col justify-center items-center rounded-lg p-5 bg-black mt-4 w-[30rem] ">
         {webCamEnabled ? (
