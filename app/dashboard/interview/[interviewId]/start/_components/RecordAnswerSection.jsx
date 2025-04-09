@@ -20,6 +20,7 @@ const RecordAnswerSection = ({
   activeQuestionIndex,
   interviewData,
   candidateDetails,
+  setIsAnswerSaved,
 }) => {
   const [userAnswer, setUserAnswer] = useState("");
   const { user } = useUser();
@@ -42,6 +43,8 @@ const RecordAnswerSection = ({
     setLoading(false);       // Also reset loading state
     setStopManual(false);
     updateCalledRef.current = false;
+    setIsAnswerSaved(false);
+    console.log("checling ndsjkgnasdjgbn", setIsAnswerSaved);
   }, [activeQuestionIndex]);
 
   console.log("timer rest or noltng",timerExpired);
@@ -170,6 +173,7 @@ const RecordAnswerSection = ({
 
       if (resp) {
         toast("User Answer recorded successfully");
+        setIsAnswerSaved(true);
       }
       setUserAnswer("");
       setLoading(false);

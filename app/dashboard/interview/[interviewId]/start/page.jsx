@@ -23,6 +23,8 @@ const StartInterview = ({ params }) => {
   const router = useRouter();
   const [isInitialized, setIsInitialized] = useState(false);
   const { isLoaded, userId } = useAuth();
+  const [isAnswerSaved, setIsAnswerSaved] = useState(false);
+
 
   const initializeInterview = async () => {
     try {
@@ -221,6 +223,7 @@ const StartInterview = ({ params }) => {
           interviewData={interviewData}
           candidateDetails={candidateDetails}
           isRecording={isRecording}
+          setIsAnswerSaved={setIsAnswerSaved}
         />
       </div>
       <div className="flex gap-3 my-5 md:my-0 md:justify-end md:gap-6">
@@ -228,6 +231,7 @@ const StartInterview = ({ params }) => {
           <Button
             onClick={() => setActiveQuestionIndex(activeQuestionIndex + 1)}
             className="bg-orange-500 hover:bg-orange-600 text-white hover:shadow-[0_4px_6px_rgba(255,165,0,0.5)] shadow-lg"
+            disabled={!isAnswerSaved}
           >
             Next Question
           </Button>

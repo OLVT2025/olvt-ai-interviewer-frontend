@@ -37,18 +37,6 @@ class RecordingService {
     }
   }
 
-//   startRecording() {
-//     if (!this.mediaRecorder) {
-//       console.error("Media recorder not initialized");
-//       return false;
-//     }
-    
-//     this.recordedChunks = [];
-//     this.mediaRecorder.start();
-//     this.isRecording = true;
-//     console.log("Recording started");
-//     return true;
-//   }
     startRecording() {
         if (!this.isInitialized || !this.mediaRecorder) {
         throw new Error("Stream not initialized. Please initialize before recording.");
@@ -93,54 +81,6 @@ class RecordingService {
     });
   }
 
-//   async uploadToGoogleDrive(file) {
-//     try {
-//       const reader = new FileReader();
-      
-//       return new Promise((resolve, reject) => {
-//         reader.onloadend = async () => {
-//           try {
-//             const base64Data = reader.result.split(",")[1];
-            
-//             const response = await fetch("/api/upload", {
-//               method: "POST",
-//               headers: { "Content-Type": "application/json" },
-//               body: JSON.stringify({ 
-//                 file: base64Data, 
-//                 fileName: file.name,
-//                 interviewId: this.interviewId
-//               }),
-//             });
-            
-//             if (response.ok) {
-//               toast.success("Recording uploaded successfully to Google Drive!");
-//               resolve(true);
-//             } else {
-//               const errorData = await response.json();
-//               console.error("Upload failed:", errorData);
-//               toast.error("Failed to upload recording to Google Drive");
-//               resolve(false);
-//             }
-//           } catch (error) {
-//             console.error("Error in upload process:", error);
-//             toast.error("An error occurred during upload");
-//             reject(error);
-//           }
-//         };
-        
-//         reader.onerror = () => {
-//           toast.error("Failed to process recording file");
-//           reject(new Error("FileReader error"));
-//         };
-        
-//         reader.readAsDataURL(file);
-//       });
-//     } catch (error) {
-//       console.error("Upload error:", error);
-//       toast.error("Failed to upload recording");
-//       return false;
-//     }
-//   }
 
 async uploadToGoogleDrive(file) {
     try {
