@@ -73,21 +73,6 @@ const StartInterview = ({ params }) => {
     };
   }, []);
 
-  // const startRecordingProcess = async () => {
-  //   try {
-  //     const success = await recordingService.startRecording();
-  //     if (success) {
-  //       setIsRecording(true);
-  //       console.log("Interview recording started");
-  //     } else {
-  //       toast.error("Failed to start recording. Please check permissions and try again.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error starting recording:", error);
-  //     toast.error("Error starting recording");
-  //   }
-  // };
-
   const startRecordingProcess = async () => {
     try {
       if (!isInitialized) {
@@ -112,24 +97,6 @@ const StartInterview = ({ params }) => {
       }
     }
   };
-
-  // const stopRecordingProcess = async (isComplete = true) => {
-  //   try {
-  //     if (isRecording) {
-  //       const success = await recordingService.stopRecording();
-  //       setIsRecording(false);
-        
-  //       if (success && isComplete) {
-  //         toast.success("Interview completed and recording saved!");
-  //       } else if (!success) {
-  //         toast.error("Failed to save recording. Please contact support.");
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.error("Error stopping recording:", error);
-  //     toast.error("Error saving recording");
-  //   }
-  // };
 
   const stopRecordingProcess = async (isComplete = true) => {
     try {
